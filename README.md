@@ -17,6 +17,12 @@ Need browserify to work
 
 ```js
 
+var _ = require("underscore");
+var $ = require('jquery');
+var BackBone  = require("backbone");
+var ViewStack = require('viewstack');
+
+
 var viewStack = new ViewStack({ el: "#application" });
 viewStack.clearStack(); // Empty stack view
 viewStack.render(); // Render view
