@@ -5,8 +5,8 @@ Need browserify to work
 
 ## Dependency
 * jQuery
-* Underscorejs
-* Backbonejs
+* Underscore
+* Backbone
 
 
 ## Installation
@@ -17,6 +17,17 @@ Need browserify to work
 
 ```js
 
-var x = new cc();
+var viewStack = new ViewStack({ el: "#application" });
+viewStack.clearStack(); // Empty stack view
+viewStack.render(); // Render view
+
+// ...
+
+viewStack.pushView( new Backbone.View() ); // Insert new view
+
+// ...
+
+viewStack.popView();
+
 
 ```
