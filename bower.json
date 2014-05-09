@@ -1,0 +1,23 @@
+{
+  "name": "backbone.viewstack",
+  "version": "0.0.1",
+  "homepage": "https://github.com/vash15/backbone.viewstack",
+  "authors": [
+    "Michele Belluco <michele@belluco.info>"
+  ],
+  "description": "View stack for Backbone",
+  "main": "lib/viewstack.js",
+  "keywords": [
+    "backbone",
+    "view",
+    "viewstack"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
