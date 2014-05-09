@@ -3,12 +3,17 @@ Backbone View Stack
 
 Need browserify to work
 
-### Dependency
+## Dependency
 * jQuery
 * Underscorejs
 * Backbonejs
 
-### Usage
+
+## Installation
+
+    bower install backbone.viewstack --save
+
+## Usage
 
 ```js
 
