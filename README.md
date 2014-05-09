@@ -3,9 +3,15 @@ Backbone View Stack
 
 Need browserify to work
 
-# Dependency
-
+### Dependency
 * jQuery
 * Underscorejs
 * Backbonejs
-* 
+
+### Usage
+
+```js
+
+var x = new cc();
+
+```
