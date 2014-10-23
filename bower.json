@@ -1,9 +1,10 @@
 {
   "name": "backbone.viewstack",
-  "version": "0.0.7",
+  "version": "1.0.0",
   "homepage": "https://github.com/vash15/backbone.viewstack",
   "authors": [
-    "Michele Belluco <michele@belluco.info>"
+    "Michele Belluco <michele@belluco.info>",
+    "Matteo Baggio <matteo.baggio@gmail.com>"
   ],
   "description": "View stack for Backbone",
   "main": "lib/viewstack.js",
