@@ -1,0 +1,28 @@
+{
+  "name": "backbone.viewstack",
+  "version": "1.0.17",
+  "description": "View stack for Backbone",
+  "main": "lib/viewstack.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vash15/backbone.viewstack.git"
+  },
+  "keywords": [
+    "backbone",
+    "view",
+    "viewstack"
+  ],
+  "contributors": [
+    { "name" : "Matteo Baggio", 
+      "email" : "matteo.baggio@gmail.com"
+    },
+    { "name" : "Michele Belluco", 
+      "email" : "michele@belluco.info"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vash15/backbone.viewstack/issues"
+  },
+  "homepage": "https://github.com/vash15/backbone.viewstack"
+}
