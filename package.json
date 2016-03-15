@@ -1,6 +1,6 @@
 {
   "name": "backbone.viewstack",
-  "version": "1.0.18",
+  "version": "2.0.0",
   "description": "View stack for Backbone",
   "main": "lib/viewstack.js",
   "repository": {
@@ -13,10 +13,10 @@
     "viewstack"
   ],
   "contributors": [
-    { "name" : "Matteo Baggio", 
+    { "name" : "Matteo Baggio",
       "email" : "matteo.baggio@gmail.com"
     },
-    { "name" : "Michele Belluco", 
+    { "name" : "Michele Belluco",
       "email" : "michele@belluco.info"
     }
   ],
