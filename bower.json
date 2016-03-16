@@ -19,7 +19,8 @@
     "node_modules",
     "bower_components",
     "test",
-    "tests"
+    "tests",
+	"ViewStack.png"
   ],
   "dependencies": {
     "backbone": "^1.2.3",

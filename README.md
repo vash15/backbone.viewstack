@@ -82,73 +82,70 @@ Options:
 
 
 ### popView([view] [,options])
-Rimuove una istanza di view dal viewstack. Il paramentro `view` non è obbligatorio, e se non viene passato la view eliminata sarà l'ultima inserita. Comunque è buona norma passare sempre l'istanza della view che si vuole eliminare.
+Remove a view from the ViewStack. The `view` parameter is not required and if you do not pass the view it will delete the last inserted. However, it is good practice to always pass an instance of the view that you want to delete.
 
 Options:
-- `animated` indica se la view è animata e deve aspettare la fine dell'animazione per scatenare gli hook. Default: `false`
-
+- `animated` it indicates whether the view is animated. If `true` the viewstack must wait until the end of the animation to trigger hooks. Default: `false`
 
 ### popViewFromClassType(classType [,options])
-Rimuove una view partendo dalla suo tipo. Se ci sono più view con la stesso tipo verranno rimosse tutte.
+Remove all views having as `classType`.
 
 ### popViewToInstance(instance [,options])
-Rimuove tutte le view dallo stack fino all'instanza desiderata.
+Removes all view from the stack until the desired instance.
 
 Options:
-- `popInstance` se impostato a `true` l'istanza passata verrà a sua volta eliminata. Default `true`.
+- `popInstance` if set to `true` the last instance it will in turn eliminated. Default `true`.
 
 
 ### refreshUrl([url])
-Metodo per aggiornare l'url a cui fa riferimento la view attiva. Se non gli viene passato nessun paramentro, il metodo scorrerà tutto lo stack di view componendo l'url tramite il metodo `url()` delle view.
-
+This method update the url for the current page. If you do not pass any parameters, it compose the url scrolling through all views until the current view, calling the view's `url()` method.
 
 ## Hook
-Questa serie di hook vengono dichiarati all'interno delle view stesse. Sono delle utility e stati che vengo richiamati dal viewstack in determinate fasi. Ad esempio se si vuole eseguire del codice prima che la view venga attivata si può implementare il metodo `onBeforeActivate`.
-
+Hooks of this series are declared inside of view. They are utilities that are called from the viewstack at certain stages.
 
 ### onBeforePush
-Viene richiamato prima di aggiungere la view al DOM e allo stack.
+Called before adding a view to the DOM and the stack.
 
 ### onPush
-Viene richiamato subito dopo aver appeso la view al DOM della pagina e accodato allo stack.
+Called after adding a view to the DOM and the stack.
 
 ### onBeforeActivate(firstTime)
-Viene richiamato prima dell'attivazione della view. Il paramentro impostato a `true` indica che la view è appena stata creata e aggiunta. Quando è a `false` indica che sta tornando attiva.
+Called before activate view. The parameter set to `true` indicates that the view has just been created and added. When is `false` indicates who is returning active.
 
 ### onActivate(firstTime)
-Viene richiamato quando la view è attiva. Se la view ha un'animazione di ingresso, il metodo viene richiamato solamente dopo il termine dell'animazione.
-Ci sono quattro modi in cui il metodo può essere richiamato:
+Called when the view is active. If the view is animated, the method is only invoked after the animation is complete.
 
-- Senza animazione. Viene richiamato subito dopo `onBeforeActivate`
-- Animazione CSS. Viene richiamato dopo aver ricevuto l'evento `animationend`.
-- Più di un'animazione CSS. In questo caso è possibile dire al hook di aspettare la fine di una determinata animazione CSS passandogli il nome. Il metodo da utilizzare è `getAnimationPushDuration` e far ritornare una stringa con il nome dell'animazione.
-- Animazione gestita dal Javascript. Per impostare il tempo di esecuzione dell'animazione utilizzare il metodo `getAnimationPushDuration` e far ritornare un tempo in millisecondi.
+There are four ways in which the method can be called:
+
+- Without animation. It is invoked immediately after `onBeforedeActivate`.
+- Animation CSS. It is invoked after receiving the `animationend` event.
+- At the end of a certain animation CSS. In this case you can tell the hook to wait the end of a given animation CSS pass it the name. The method to use is `getAnimationPushDuration` and returning a string with the name of the animation.
+- Animation handled by JavaScript. To set the execution time of the animation using the `getAnimationPushDuration` method to return a time in milliseconds.
 
 ### onBeforeDeactivate
-Viene richiamato prima di disattivare la view. In questo caso non viene distrutta e rimossa dal DOM ma è solamente in secondo piano.
-Un suggerimento che posso dare è quello di disattivare gli eventi della view e evenutali scroll i questa fase.
+Called before deactivate view. In this case it is not destroyed and removed from the DOM but it is only in the background. One suggestion is to disable events of any scroll the view and this phase.
 
 ### onDeactivate
-Viene richiamto quando la view è stata disattivata. Se la view viene disattivata con animazione attiva ( `viewstack.popView(myView,{animated: true})` ), il metodo verrà richiamato solamente dopo il termine dell'animazione.
-Ci sono quattro modi in cui il metodo può essere richiamato:
+Called when the view is deactivate. If the view is deactivate with animation ( `viewstack.popView(myView,{animated: true})` ), the method will only be invoked after the animation is complete.
 
-- Senza animazione. Viene richiamato subito dopo `onBeforeDeactivate`
-- Animazione CSS. Viene richiamato dopo aver ricevuto l'evento `animationend`.
-- Più di un'animazione CSS. In questo caso è possibile dire al hook di aspettare la fine di una determinata animazione CSS passandogli il nome. Il metodo da utilizzare è `getAnimationPopDuration` e far ritornare una stringa con il nome dell'animazione.
-- Animazione gestita dal Javascript. Per impostare il tempo di esecuzione dell'animazione utilizzare il metodo `getAnimationPopDuration` e far ritornare un tempo in millisecondi.
+There are four ways in which the method can be called:
+
+- Without animation. It is invoked immediately after `onBeforeDeactivate`
+- Animation CSS. It is invoked after receiving the `animationend` event.
+- At the end of a certain animation CSS. In this case you can tell the hook to wait the end of a given animation CSS pass it the name. The method to use is `getAnimationPopDuration` and returning a string with the name of the animation.
+- Animation handled by JavaScript. To set the execution time of the animation using the `getAnimationPopDuration` method to return a time in milliseconds.
 
 ### onBeforePop
-Viene richiamato prima di rimuovere la view dal DOM.
+Called before remove from DOM.
 
 ### onPop
-Viene richiamato dopo aver eseguito le varie animazioni di uscita e rimosso la view dal DOM e dallo stack.
-
+Called after remove view from DOM and stack.
 
 ### getAnimationPushDuration
-È una util che può ritornare la duarata dell'animazione in millisecndi oppure una stringa che indica il nome dell'animazione CSS d'attendere.
+Return the millisecond (number) or name of animation (string).
 
 ### getAnimationPopDuration
-È una util che può ritornare la duarata dell'animazione in millisecndi oppure una stringa che indica il nome dell'animazione CSS d'attendere.
+Return the millisecond (number) or name of animation (string).
 
 ## Usage
 
