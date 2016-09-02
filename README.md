@@ -38,7 +38,7 @@ Options:
 Initialize stack emptying it from view.
 
 ### clearStack([length])
-It cleans up the stack up to a certain index. The `length` parameter is optional. Default: `0`.
+It cleans up the stack up to a certain index. The `length` parameter is optional. Default: `0`. Trigger `clear` event.
 
 ### size
 Return the total of views contained into stack.
