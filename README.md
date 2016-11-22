@@ -54,7 +54,19 @@ Return the last view.
 
 ### getViewActive
 Return the active view.
-Ritorna la view attiva. It can be active only one view.
+
+## getActiveViewWithOptions
+Return an object
+
+```
+	{
+		"view": `instance of Backbone.View`,
+		"options": {
+			animated: true,
+			...
+		}
+	}
+```
 
 ### getViewAtIndex(index)
 Return the view at index.
