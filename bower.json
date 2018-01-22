@@ -1,6 +1,6 @@
 {
   "name": "backbone.viewstack",
-  "version": "2.3.1",
+  "version": "2.3.2",
   "homepage": "https://github.com/vash15/backbone.viewstack",
   "authors": [
     "Michele Belluco <michele@belluco.info>",
@@ -23,7 +23,7 @@
 	"ViewStack.png"
   ],
   "dependencies": {
-    "backbone": "^1.2.3",
+    "backbone": "^1.3.3",
     "underscore": "^1.8.3"
   }
 }
