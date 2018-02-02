@@ -250,4 +250,4 @@ setTimeout(function(){
 
 ## Licence
 
-Released under MIT License (MIT) Copyright (c) 2014-2016 Matteo Baggio & Michele Belluco
+Released under MIT License (MIT) Copyright (c) 2014-2018 Matteo Baggio & Michele Belluco
