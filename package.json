@@ -1,6 +1,6 @@
 {
   "name": "backbone.viewstack",
-  "version": "2.3.4",
+  "version": "2.3.5",
   "description": "View stack for Backbone",
   "main": "lib/viewstack.js",
   "repository": {
