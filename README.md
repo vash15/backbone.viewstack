@@ -108,6 +108,11 @@ Removes all view from the stack until the desired instance.
 Options:
 - `popInstance` if set to `true` the last instance it will in turn eliminated. Default `true`.
 
+### popViewToIndex(index [, options])
+Removes the views until the `index` parameter. It internally calls popView with `animated == false`.
+
+Options:
+- `animateLastView` if `true` the last view will be popped with animation
 
 ### refreshUrl([url])
 This method update the url for the current page. If you do not pass any parameters, it compose the url scrolling through all views until the current view, calling the view's `url()` method.
